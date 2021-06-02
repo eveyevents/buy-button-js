@@ -676,6 +676,7 @@ describe('Product Component class', () => {
           assert.calledWith(createCheckoutStub, {lineItems: [{
             variantId: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8xMjM0NQ==',
             quantity: selectedQuantity,
+            customAttributes: [],
           }]});
         });
       });
@@ -1476,7 +1477,7 @@ describe('Product Component class', () => {
 
           const showUnitPriceStub = sinon.stub(product, 'showUnitPrice').get(() => true);
           const getUnitPriceBaseUnitStub = sinon.stub(getUnitPriceBaseUnit, 'default').returns(mockUnitPriceBaseUnit);
-          
+
           assert.equal(product.formattedUnitPriceBaseUnit, mockUnitPriceBaseUnit);
           assert.calledOnce(getUnitPriceBaseUnitStub);
           assert.calledWith(getUnitPriceBaseUnitStub, product.selectedVariant.unitPriceMeasurement.referenceValue, product.selectedVariant.unitPriceMeasurement.referenceUnit);
