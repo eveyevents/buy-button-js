@@ -61,7 +61,7 @@ export default class ProductView extends View {
     if (this.component.isButton) {
       return `<div class="${this.wrapperClass} ${this.component.classes.product.product}"><div tabindex="0" role="button" aria-label="${ariaLabel}" class="${this.component.classes.product.blockButton}">${html}</div></div>`;
     } else {
-      return `<div class="${this.wrapperClass} ${this.component.classes.product.product}">${html}</div>`;
+      return `<div class="${this.wrapperClass} ${this.component.classes.product.product}" data-product-id="${this.component.model.id}">${html}</div>`;
     }
   }
 

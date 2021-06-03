@@ -171,7 +171,7 @@ describe('Product View class', () => {
     it('wraps html in a div with wrapper class and product class if the component is not a button', () => {
       product.isButton = false;
       const htmlString = product.view.wrapTemplate('test');
-      assert.equal(htmlString, `<div class="${product.view.wrapperClass} ${product.classes.product.product}">test</div>`);
+      assert.equal(htmlString, `<div class="${product.view.wrapperClass} ${product.classes.product.product}" data-product-id="${product.model.id}">test</div>`);
     });
 
     describe('if the component is a button', () => {
